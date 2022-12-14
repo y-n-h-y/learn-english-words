@@ -1,0 +1,88 @@
+.bg01 {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  background-image: repeating-linear-gradient(to bottom, transparent 25px, rgba(0, 0, 0, 0.4) 26px, rgba(0, 0, 0, 0.4) 26px, rgba(0, 0, 0, 0.4) 52px, rgba(0, 0, 0, 0.4) 52px, rgba(0, 0, 0, 0.4) 78px, rgba(0, 0, 0, 0.4) 78, rgba(0, 0, 0, 0.4) 104px, rgba(0, 0, 0, 0.4) 104px, rgba(0, 0, 0, 0.4) 130px, rgba(0, 0, 0, 0.4) 130px), repeating-linear-gradient(to right, transparent 25px, rgba(0, 0, 0, 0.04) 26px, rgba(0, 0, 0, 0.04) 26px, rgba(0, 0, 0, 0.04) 52px, rgba(0, 0, 0, 0.04) 52px, rgba(0, 0, 0, 0.04) 78px, rgba(0, 0, 0, 0.04) 78px, rgba(0, 0, 0, 0.04) 104px, rgba(0, 0, 0, 0.04) 104px, rgba(0, 0, 0, 0.04) 130px, rgba(0, 0, 0, 0.04) 130px);
+  z-index: -2;
+}
+
+main section .ttl {
+  text-align: center;
+}
+main section .ttl h1 {
+  padding: 30px 0;
+  font-size: 3rem;
+}
+@media screen and (max-width: 480px) {
+  main section .ttl h1 {
+    font-size: 1.8rem;
+  }
+}
+main section .ttl .big {
+  font-size: 1.5em;
+}
+main section .mainBlock {
+  width: 1000px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+main section .mainBlock > ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+main section .mainBlock > ul > li {
+  width: 47.5%;
+  margin: 20px 0;
+}
+@media screen and (max-width: 480px) {
+  main section .mainBlock > ul > li {
+    width: 100%;
+  }
+}
+main section .mainBlock > ul > li .menu {
+  padding: 15px 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+main section .reviewBlock {
+  margin-top: 50px;
+  text-align: center;
+}
+main section .reviewBlock .reviewBox {
+  width: 500px;
+  max-width: 90%;
+  margin: auto;
+  border-radius: 8px;
+  cursor: pointer;
+}
+main section .reviewBlock .reviewBox > p {
+  padding: 20px 0;
+  font-size: 1.5rem;
+}
+main .modalBg {
+  position: fixed;
+  width: 100%;
+  background-color: aqua;
+  top: 0;
+  left: 0;
+}
+main .modalBg .modalBox {
+  position: absolute;
+  width: 700px;
+  max-width: 90%;
+  height: 600px;
+  background-color: bisque;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  overflow-y: scroll;
+}
+
+.isNone {
+  display: none;
+}

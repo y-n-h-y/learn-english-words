@@ -1,0 +1,116 @@
+
+$tab: 768px;
+$sp: 480px;
+
+@mixin tab {
+  @media screen and (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+.bg01 {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  background-image: repeating-linear-gradient(to bottom, 
+  transparent 25px,
+  rgba(0, 0, 0, 0.4) 26px, rgba(0,0,0,0.4) 26px,
+  rgba(0, 0, 0, 0.4) 52px, rgba(0,0,0,0.4) 52px,
+  rgba(0, 0, 0, 0.4) 78px, rgba(0,0,0,0.4) 78,
+  rgba(0, 0, 0, 0.4) 104px, rgba(0,0,0,0.4) 104px,
+  rgba(0, 0, 0, 0.4) 130px, rgba(0,0,0,0.4) 130px
+  ),
+  repeating-linear-gradient(to right,
+  transparent 25px,
+  rgba(0, 0, 0, 0.04) 26px,  rgba(0, 0, 0, 0.04) 26px,
+  rgba(0, 0, 0, 0.04) 52px,  rgba(0, 0, 0, 0.04) 52px,
+  rgba(0, 0, 0, 0.04) 78px,  rgba(0, 0, 0, 0.04) 78px,
+  rgba(0, 0, 0, 0.04) 104px,  rgba(0, 0, 0, 0.04) 104px,
+  rgba(0, 0, 0, 0.04) 130px,  rgba(0, 0, 0, 0.04) 130px
+  );
+  z-index: -2;
+}
+main {
+  section {
+    .ttl {
+      text-align: center;
+      h1 {
+        padding: 30px 0;
+        font-size: 3rem;
+        @include sp {
+          font-size: 1.8rem;
+        }
+      }
+      .big {
+        font-size: 1.5em;
+      }
+    }
+    .mainBlock {
+      width: 1000px;
+      max-width: 90%;
+      margin: 0 auto;
+      >ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        >li {
+          width: calc(95%/2);
+          margin: 20px 0;
+          @include sp {
+            width: calc(100%);
+          }
+          .menu {
+            padding: 15px 0;
+            border-radius: 8px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .reviewBlock {
+      margin-top: 50px;
+      text-align: center;
+      .reviewBox {
+        width: 500px;
+        max-width: 90%;
+        margin: auto;
+        border-radius: 8px;
+        cursor: pointer;
+        > p {
+          padding: 20px 0;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+  .modalBg {
+    position: fixed;
+    width: 100%;
+    background-color: aqua;
+    top: 0;
+    left: 0;
+    .modalBox {
+      position: absolute;
+      width: 700px;
+      max-width: 90%;
+      height: 600px;
+      background-color: bisque;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      overflow-y: scroll;
+    }
+  }
+}
+
+.isNone {
+  display: none;
+}
