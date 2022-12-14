@@ -1,12 +1,12 @@
-export const sectionObj04 = [
+export const sectionObj07 = [
   {
     title: 'Chapter001',
     content: [
       {
-        word: 'potential',
-        mean: '潜在的な、起こり得る',
-        example: 'potential customer',
-        subtext: '潜在的な客',
+        word: 'calamitous',
+        mean: '災難をもたらす、悲惨な',
+        example: 'calamitous rise in sea level',
+        subtext: '災難をもたらす海面の上昇',
         result: true
       },
       {

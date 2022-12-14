@@ -12,32 +12,8 @@ $sp: 480px;
     @content;
   }
 }
-.bg01 {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background-color: #fff;
-  top: 0;
-  left: 0;
-  background-image: repeating-linear-gradient(to bottom, 
-  transparent 25px,
-  rgba(0, 0, 0, 0.4) 26px, rgba(0,0,0,0.4) 26px,
-  rgba(0, 0, 0, 0.4) 52px, rgba(0,0,0,0.4) 52px,
-  rgba(0, 0, 0, 0.4) 78px, rgba(0,0,0,0.4) 78,
-  rgba(0, 0, 0, 0.4) 104px, rgba(0,0,0,0.4) 104px,
-  rgba(0, 0, 0, 0.4) 130px, rgba(0,0,0,0.4) 130px
-  ),
-  repeating-linear-gradient(to right,
-  transparent 25px,
-  rgba(0, 0, 0, 0.04) 26px,  rgba(0, 0, 0, 0.04) 26px,
-  rgba(0, 0, 0, 0.04) 52px,  rgba(0, 0, 0, 0.04) 52px,
-  rgba(0, 0, 0, 0.04) 78px,  rgba(0, 0, 0, 0.04) 78px,
-  rgba(0, 0, 0, 0.04) 104px,  rgba(0, 0, 0, 0.04) 104px,
-  rgba(0, 0, 0, 0.04) 130px,  rgba(0, 0, 0, 0.04) 130px
-  );
-  z-index: -2;
-}
 main {
+  background-color: #eaf1fb;
   section {
     .ttl {
       text-align: center;
@@ -67,9 +43,61 @@ main {
             width: calc(100%);
           }
           .menu {
+            position: relative;
             padding: 15px 0;
             border-radius: 8px;
+            background-color: #fff;
+            -webkit-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
             cursor: pointer;
+            .modalBtn {
+              position: absolute;
+              width: 30px;
+              height: 30px;
+              top: 50%;
+              right: 25px;
+              -webkit-transition: all .2s ease-in-out;
+              transition: all .2s ease-in-out;
+              -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+              .plus {
+                display: block;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                &::before,
+                &::after {
+                  position: absolute;
+                  content: '';
+                  width: 20px;
+                  height: 4px;
+                  border-radius: 10px;
+                  background-color: #c7c7c7;
+                }
+                &::before {
+                  top: 50%;
+                  left: 50%;
+                  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+                  transform: translate(-50%, -50%) rotate(90deg);
+                }
+                &::after {
+                  top: 50%;
+                  left: 50%;
+                  -webkit-transform: translate(-50%, -50%);
+                  transform: translate(-50%, -50%);
+                }
+              }
+            }
+            h2 {
+              padding-right: 15px;
+              color: #323232;
+            }
+            &:hover {
+              .modalBtn {
+                -webkit-transform: translateY(-50%) rotate(90deg);
+                transform: translateY(-50%) rotate(90deg);
+              }
+            }
           }
         }
       }
@@ -93,7 +121,8 @@ main {
   .modalBg {
     position: fixed;
     width: 100%;
-    background-color: aqua;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
     top: 0;
     left: 0;
     .modalBox {
@@ -101,16 +130,65 @@ main {
       width: 700px;
       max-width: 90%;
       height: 600px;
-      background-color: bisque;
+      background-color: #ffffff;
+      border-radius: 8px;
       top: 50%;
       left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
       overflow-y: scroll;
+      animation: popup .5s ease-in-out .2s forwards;
+      opacity: 0;
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 90%;
+        margin: auto;
+        padding: 20px 0;
+        li {
+          position: relative;
+          width: calc(95%/2);
+          background-color: #a2b5d2;
+          border-radius: 8px;
+          text-align: center;
+          @include sp {
+            width: 100%;
+          }
+          p {
+            padding: 15px 0;
+            font-size: 1.1rem;
+            color: #ffffff;
+          }
+          &::before {
+            position: absolute;
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-top: solid 2px #ffffff;
+            border-right: solid 2px #ffffff;
+            top: 49%;
+            right: 30px;
+            -webkit-transform: translateY(-51%) rotate(45deg);
+            transform: translateY(-51%) rotate(45deg);
+          }
+        }
+      }
     }
   }
 }
 
 .isNone {
   display: none;
+}
+
+@keyframes popup {
+  from {
+    -webkit-transform: translate(-50%, -50%) scale(0.5);
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
 }

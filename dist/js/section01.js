@@ -1,6 +1,6 @@
-export const chapterObj01 = [
+export const sectionObj01 = [
   {
-    title: 'chapter001',
+    title: 'Chapter001',
     content: [
       {
         word: 'potential',
