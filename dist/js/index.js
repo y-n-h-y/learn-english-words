@@ -1,10 +1,5 @@
-import { sectionObj01 } from "./section01.js";
-import { sectionObj02 } from "./section02.js";
-import { sectionObj03 } from "./section03.js";
-import { sectionObj04 } from "./section04.js";
-import { sectionObj05 } from "./section05.js";
-import { sectionObj06 } from "./section06.js";
-import { sectionObj07 } from "./section07.js";
+import { sectionObj } from "./content.js";
+
 
 //window高さの取得
 const winHeight = window.innerHeight;
@@ -53,25 +48,25 @@ for (const menu of menuList) {
     const menuData = menu.dataset.words;
     switch (menuData) {
       case '01':
-        createChapterElm(sectionObj01, '01');
+        createChapterElm(sectionObj.section01, '01');
         break;
       case '02':
-        createChapterElm(sectionObj02, '02');
+        createChapterElm(sectionObj.section02, '02');
         break
       case '03':
-        createChapterElm(sectionObj03, '03');
+        createChapterElm(sectionObj.section03, '03');
         break
       case '04':
-        createChapterElm(sectionObj04, '04');
+        createChapterElm(sectionObj.section04, '04');
         break
       case '05':
-        createChapterElm(sectionObj05, '05');
+        createChapterElm(sectionObj.section05, '05');
         break
       case '06':
-        createChapterElm(sectionObj06, '06');
+        createChapterElm(sectionObj.section06, '06');
         break
       case '07':
-        createChapterElm(sectionObj07, '07');
+        createChapterElm(sectionObj.section07, '07');
         break
     }
   });

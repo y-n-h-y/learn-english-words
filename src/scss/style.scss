@@ -186,6 +186,20 @@ main {
     }
   }
 }
+.chapterPage {
+  .questions {
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  ul {
+    display: flex;
+    li {
+      min-width: 100%;
+      -webkit-transition: all .3s ease-out;
+      transition: all .5s ease-out;
+    }
+  }
+}
 
 .isNone {
   display: none;
