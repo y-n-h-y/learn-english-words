@@ -35,7 +35,7 @@ const createChapterElm = (chapter, num) => {
   for (let i = 0; i < l; i++) {
     chapterHtml += `
       <li>
-        <a href="/section${num}/chapter.html?section=section${num}&content=${i}">
+        <a href="/content/?section=section${num}&content=${i}">
           <p>${chapter[i].title}</p>
         </a>
       </li>

@@ -147,30 +147,41 @@ main {
         li {
           position: relative;
           width: calc(95%/2);
-          background-color: #a2b5d2;
+          background-color: #eaf1fb;
           border-radius: 8px;
           text-align: center;
           @include sp {
             width: 100%;
           }
           p {
-            padding: 15px 0;
+            padding: 20px 0;
             font-size: 1.1rem;
-            color: #ffffff;
+            font-weight: bold;
+            color: #7d7d7d;
           }
           &::before {
             position: absolute;
             content: '';
             width: 8px;
             height: 8px;
-            border-top: solid 2px #ffffff;
-            border-right: solid 2px #ffffff;
+            border-top: solid 2px #7d7d7d;
+            border-right: solid 2px #7d7d7d;
             top: 49%;
             right: 30px;
             -webkit-transform: translateY(-51%) rotate(45deg);
             transform: translateY(-51%) rotate(45deg);
           }
         }
+      }
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: #e3e3e3;
+        border-radius: 8px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: #a2b5d2;
       }
     }
   }
