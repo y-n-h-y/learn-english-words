@@ -186,6 +186,30 @@ main .modalBg .modalBox::-webkit-scrollbar-thumb {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.5s ease-out;
 }
+.chapterPage .qWord {
+  width: 800px;
+  max-width: 90%;
+  margin: 30px auto;
+  background-color: #ffffff;
+  text-align: center;
+}
+.chapterPage .qWord h2 {
+  padding: 20px 0 30px;
+  font-size: 3rem;
+}
+.chapterPage .qWord .aList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 90%;
+  padding-bottom: 30px;
+  margin: 0 auto;
+}
+.chapterPage .qWord .aList button {
+  display: block;
+  padding: 10px 20px;
+  background-color: #ffffff;
+}
 
 .isNone {
   display: none;

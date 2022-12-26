@@ -52,7 +52,7 @@ const chapterElm = (datas) => {
 			setUnique.push(data.mean);
 		}
 		const set = new Set(setUnique);//setWord内の重複データを削除
-		for (let n = 0; set.size < 4; n++ ) {//set内の数が4になるま回答選択肢を追加する
+		for (let n = 0; set.size < 4; n++ ) {//set内の数が4になるまで回答選択肢を追加する
 			set.add(datas[Math.floor(Math.random() * dataLength)].mean);
 		}
 		questionHtml += `

@@ -199,6 +199,30 @@ main {
       transition: all .5s ease-out;
     }
   }
+  .qWord {
+    width: 800px;
+    max-width: 90%;
+    margin: 30px auto;
+    background-color: #ffffff;
+    text-align: center;
+      h2 {
+        padding: 20px 0 30px;
+        font-size: 3rem;
+      }
+      .aList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 90%;
+        padding-bottom: 30px;
+        margin: 0 auto;
+        button {
+          display: block;
+          padding: 10px 20px;
+          background-color: #ffffff;
+        }
+      }
+  }
 }
 
 .isNone {
