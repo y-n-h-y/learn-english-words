@@ -202,24 +202,48 @@ main {
   .qWord {
     width: 800px;
     max-width: 90%;
-    margin: 30px auto;
+    margin: 50px auto;
     background-color: #ffffff;
+    border-radius: 8px;
     text-align: center;
       h2 {
-        padding: 20px 0 30px;
+        padding: 30px 0 20px;
         font-size: 3rem;
       }
       .aList {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-around;
         width: 90%;
-        padding-bottom: 30px;
+        padding-bottom: 50px;
         margin: 0 auto;
         button {
           display: block;
-          padding: 10px 20px;
+          width: 300px;
+          margin-top: 35px;
+          padding: 15px 20px;
           background-color: #ffffff;
+          border-radius: 3rem;
+          border: solid 2px #a2b5d2;
+          font-weight: bold;
+          font-size: 0.9rem;
+          color: #8ba1c1;
+          transition: all .2s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            background-color: #a2b5d2;
+            color: #ffffff;
+          }
+        }
+      }
+      @include sp {
+        h2 {
+          padding: 30px 0 10px;
+        }
+        .aList {
+          button {
+            margin-top: 20px;
+          }
         }
       }
   }
