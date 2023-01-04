@@ -52,7 +52,7 @@ const chapterElm = (datas) => {
 			setUnique.push(data.mean);
 		}
 		const set = new Set(setUnique);//setWord内の重複データを削除
-		for (let n = 0; set.size < 4; n++ ) {//set内の数が4になるまで回答選択肢を追加する
+		for (let n = 0; set.size < 4; n++) {//set内の数が4になるまで回答選択肢を追加する
 			set.add(datas[Math.floor(Math.random() * dataLength)].mean);
 		}
 		questionHtml += `
@@ -70,9 +70,9 @@ const chapterElm = (datas) => {
 					<p>${data.mean}</p>
 					<p>${data.example !== '' ? data.example : ''}</p>
 					<p>${data.subtext !== '' ? data.subtext : ''}</p>
-				</div>
-				<div class="next">
-					<button class="nextBtn" data-page="${index}">つぎへ</button>
+						<div class="next">
+							<button class="nextBtn" data-page="${index}">つぎへ</button>
+						</div>
 				</div>
 			</li>
 		`;
@@ -93,7 +93,11 @@ window.addEventListener('load', () => {
 	for (const nextBtn of nextBtns) {
 		nextBtn.addEventListener('click', () => {
 			pageData = nextBtn.dataset.page;
-			pageMove(pageData);
+			if (pageData == nextBtns.length) {
+				location.href = '/result.html'
+			} else {
+				pageMove(pageData);
+			}
 		});
 	}
 	window.addEventListener('resize', (pageData) => {

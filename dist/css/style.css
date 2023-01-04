@@ -201,7 +201,7 @@ main .modalBg .modalBox::-webkit-scrollbar-thumb {
 .chapterPage .qWord .aList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 90%;
   padding-bottom: 50px;
   margin: 0 auto;
@@ -218,7 +218,6 @@ main .modalBg .modalBox::-webkit-scrollbar-thumb {
   font-size: 0.9rem;
   color: #8ba1c1;
   transition: all 0.2s ease-in-out;
-  cursor: pointer;
 }
 .chapterPage .qWord .aList button:hover {
   background-color: #a2b5d2;
@@ -231,6 +230,36 @@ main .modalBg .modalBox::-webkit-scrollbar-thumb {
   .chapterPage .qWord .aList button {
     margin-top: 20px;
   }
+}
+.chapterPage .answer {
+  width: 100%;
+  background-color: #ffffff;
+}
+.chapterPage .next {
+  padding: 30px 0 40px;
+  text-align: center;
+}
+.chapterPage .next button {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  background-color: #a2b5d2;
+  border: solid 2px #a2b5d2;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 1.2rem;
+}
+.chapterPage .next button::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-top: solid 2px #ffffff;
+  border-right: solid 2px #ffffff;
+  top: 49%;
+  right: 30px;
+  -webkit-transform: translateY(-51%) rotate(45deg);
+  transform: translateY(-51%) rotate(45deg);
 }
 
 .isNone {
