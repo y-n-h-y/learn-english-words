@@ -2,6 +2,7 @@ import { sectionObj } from "./content.js";
 
 //問題表示用要素
 const chaptersWrap = document.createElement('ul');
+const winHeight = window.innerHeight;
 let questionHtml = '';
 
 //urlから表示する内容を選定
@@ -56,7 +57,7 @@ const chapterElm = (datas) => {
 			set.add(datas[Math.floor(Math.random() * dataLength)].mean);
 		}
 		questionHtml += `
-			<li>
+			<li style="height: ${winHeight}px;">
 				<div class="qWord">
 					<h2>${data.word}</h2>
 					<div class="aList">
@@ -68,11 +69,10 @@ const chapterElm = (datas) => {
 				</div>
 				<div class="answer">
 					<p>${data.mean}</p>
-					<p>${data.example !== '' ? data.example : ''}</p>
-					<p>${data.subtext !== '' ? data.subtext : ''}</p>
-						<div class="next">
-							<button class="nextBtn" data-page="${index}">つぎへ</button>
-						</div>
+					<p>${data.example !== '' ? data.example : ''}<br class="isSp"> (${data.subtext !== '' ? data.subtext : ''})</p>
+				</div>
+				<div class="next">
+					<button class="nextBtn" data-page="${index}">つぎへ</button>
 				</div>
 			</li>
 		`;
@@ -84,6 +84,8 @@ const chapterElm = (datas) => {
 window.addEventListener('DOMContentLoaded', () => {
 	document.querySelector('.questions').append(chaptersWrap);
 	chapterChoose(section, chapter);
+	const answerBtn = document.querySelectorAll('.aList button');//回答ボタンの取得
+	console.log(answerBtn);
 });
 
 window.addEventListener('load', () => {
